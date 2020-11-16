@@ -352,7 +352,8 @@ public class CarpetSettings
     @Rule(
             desc = "Enables /distance command to measure in game distance between points",
             extra = "Also enables brown carpet placement action if 'carpets' rule is turned on as well",
-            category = COMMAND
+            //appSource = "distance",
+            category = {COMMAND,SCARPET}
     )
     public static String commandDistance = "true";
 
@@ -378,7 +379,7 @@ public class CarpetSettings
             extra = {"... allows for drawing simple shapes or",
                      "other shapes which are sorta difficult to do normally"},
             appSource = "draw",
-            category = COMMAND, SCARPET)
+            category = {COMMAND, SCARPET})
     public static String commandDraw = "true";
 
     @Rule(
