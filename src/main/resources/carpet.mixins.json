@@ -133,6 +133,7 @@
     "ArmorStand_scarpetMarkerMixin",
     "Entity_scarpetEventsMixin",
     "MobMixin_scarpetEventsMixin",
+    "Mooshroom_scarpetEventsMixin",
     "LivingEntity_scarpetEventsMixin",
     "Player_scarpetEventsMixin",
     "ServerPlayer_scarpetEventMixin",
