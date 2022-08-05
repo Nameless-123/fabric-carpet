@@ -134,6 +134,7 @@
     "Entity_scarpetEventsMixin",
     "MobMixin_scarpetEventsMixin",
     "Mooshroom_scarpetEventsMixin",
+    "Villager_scarpetEventsMixin",
     "LivingEntity_scarpetEventsMixin",
     "Player_scarpetEventsMixin",
     "ServerPlayer_scarpetEventMixin",
