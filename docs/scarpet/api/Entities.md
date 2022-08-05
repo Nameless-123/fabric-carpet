@@ -891,6 +891,9 @@ The following events can be handled by entities:
 *   `'on_removed'`: execute once when an entity is removed. Required arguments: `entity`
 *   `'on_damaged'`: executed every time a living entity is about to receive damage.
 Required arguments: `entity, amount, source, attacking_entity`
+*   `'on_transform'`: executed every time a living entity transforms (e.g., zombie drowning). The original entity can still
+be manipulated, but it will be removed, so it's only really to query info about it, like nbt. This can serve as a
+workaround for [MC-88967](https://bugs.mojang.com/browse/MC-88967). Required arguments: `entity, converted_entity`
 
 It doesn't mean that all entity types will have a chance to execute a given event, but entities will not error 
 when you attach an inapplicable event to it.
@@ -971,7 +974,7 @@ protect_villager(entity, amount, source, source_entity, healing_player) ->
 __on_player_interacts_with_entity(player, entity, hand) ->
 (
    if (entity~'type' == 'villager',
-      entity_event(entity, 'on_damage', 'protect_villager', player~'name')
+      entity_event(entity, 'on_damaged', 'protect_villager', player~'name')
    )
 )
 </pre>
