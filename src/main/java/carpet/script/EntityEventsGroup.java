@@ -123,6 +123,16 @@ public class EntityEventsGroup
             }
         };
 
+        public static final Event ON_TRANSFORM = new Event("on_transform", 1){
+            @Override
+            public List<Value> makeArgs(Entity entity, Object... providedArgs){
+                return Arrays.asList(
+                        EntityValue.of(entity),
+                        EntityValue.of((Entity) providedArgs[0])
+                );
+            }
+        };
+
         public final int argcount;
         public final String id;
         public Event(String identifier, int args)
@@ -141,7 +151,7 @@ public class EntityEventsGroup
         }
         public CarpetEventServer.CallbackResult call(CarpetEventServer.Callback tickCall, Entity entity, Object ... args)
         {
-            assert args.length == argcount-1;
+            assert args.length == argcount-1; //TODO Shouldn't this throw some kind of error?
             return tickCall.execute(entity.createCommandSourceStack(), makeArgs(entity, args));
         }
         protected List<Value> makeArgs(Entity entity, Object ... args)

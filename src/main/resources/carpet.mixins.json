@@ -132,6 +132,7 @@
     "WitherBoss_moreBlueMixin",
     "ArmorStand_scarpetMarkerMixin",
     "Entity_scarpetEventsMixin",
+    "MobMixin_scarpetEventsMixin",
     "LivingEntity_scarpetEventsMixin",
     "Player_scarpetEventsMixin",
     "ServerPlayer_scarpetEventMixin",
