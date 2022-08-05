@@ -135,6 +135,7 @@
     "MobMixin_scarpetEventsMixin",
     "Mooshroom_scarpetEventsMixin",
     "Villager_scarpetEventsMixin",
+    "Pig_scarpetEventsMixin",
     "LivingEntity_scarpetEventsMixin",
     "Player_scarpetEventsMixin",
     "ServerPlayer_scarpetEventMixin",
