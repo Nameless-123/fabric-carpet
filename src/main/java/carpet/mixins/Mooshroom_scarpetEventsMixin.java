@@ -3,6 +3,7 @@ package carpet.mixins;
 import carpet.fakes.EntityInterface;
 import carpet.script.EntityEventsGroup;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.animal.MushroomCow;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,7 +20,8 @@ public class Mooshroom_scarpetEventsMixin {
         at=@At(value="INVOKE", target = "Lnet/minecraft/world/level/Level;addFreshEntity(Lnet/minecraft/world/entity/Entity;)Z")
     )
     private Entity onShearEvent(final Entity cow){
-        ((EntityInterface)this).getEventContainer().onEvent(EntityEventsGroup.Event.ON_TRANSFORM, cow);
+        if(cow instanceof Cow) // Cos otherwise this triggers for the mushroom items too
+            ((EntityInterface)this).getEventContainer().onEvent(EntityEventsGroup.Event.ON_TRANSFORM, cow);
         return cow;
     }
 }
