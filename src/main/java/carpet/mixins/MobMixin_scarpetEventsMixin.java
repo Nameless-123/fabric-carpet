@@ -26,6 +26,8 @@ public class MobMixin_scarpetEventsMixin {
         at = @At("RETURN")
     )
     public <T extends  Mob> void onConvertEvent(EntityType<T> entityType, boolean bl, CallbackInfoReturnable<T> cir){
-        ((EntityInterface)this).getEventContainer().onEvent(EntityEventsGroup.Event.ON_TRANSFORM, cir.getReturnValue());
+        T newMob = cir.getReturnValue();
+        if(newMob!=null)
+            ((EntityInterface)this).getEventContainer().onEvent(EntityEventsGroup.Event.ON_TRANSFORM, newMob);
     }
 }
