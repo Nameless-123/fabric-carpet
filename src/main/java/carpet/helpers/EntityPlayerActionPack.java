@@ -212,7 +212,7 @@ public class EntityPlayerActionPack
     {
         Map<ActionType, Boolean> actionAttempts = new HashMap<>();
         actions.entrySet().removeIf((e) -> e.getValue().done);
-        for (Map.Entry<ActionType, Action> e :\ actions.entrySet())
+        for (Map.Entry<ActionType, Action> e : actions.entrySet())
         {
             Action action = e.getValue();
             // skipping attack if use was successful
