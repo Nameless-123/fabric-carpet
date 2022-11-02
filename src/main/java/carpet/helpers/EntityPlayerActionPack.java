@@ -212,7 +212,7 @@ public class EntityPlayerActionPack
     {
         Map<ActionType, Boolean> actionAttempts = new HashMap<>();
         actions.entrySet().removeIf((e) -> e.getValue().done);
-        for (Map.Entry<ActionType, Action> e : actions.entrySet())
+        for (Map.Entry<ActionType, Action> e :\ actions.entrySet())
         {
             Action action = e.getValue();
             // skipping attack if use was successful
@@ -235,14 +235,9 @@ public class EntityPlayerActionPack
                 }
             }
         }
-        if (forward != 0.0F)
-        {
-            player.zza = forward*(sneaking?0.3F:1.0F);
-        }
-        if (strafing != 0.0F)
-        {
-            player.xxa = strafing*(sneaking?0.3F:1.0F);
-        }
+        float vel = sneaking?0.3F:1.0F;
+        player.zza = forward*vel;
+        player.xxa = strafing*vel;
     }
 
     static HitResult getTarget(ServerPlayer player)
